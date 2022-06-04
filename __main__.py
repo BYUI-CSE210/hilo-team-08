@@ -16,71 +16,63 @@ print(f"Hello {name}. You have 300 points.")
 
 
 class cards:
-    card = random.randint(1, 13)
-    current_card = random.randint(1, 13)
-    next_card = random.randint(1, 13)
 
+    def __init__(self, current_card):
+        self.current_card = current_card
 
-def current_card(self):
-        return self.card
+        def current_card(self):
+                return self.current_card
 
-def next_card(self):
-        return self.card
+class card:
 
-card1 = cards()
-print(card1.current_card())
-card2 = cards()
-print(card2.next_card())
+    def __init__(self, next_card):
+        self.next_card = next_card
 
+        def next_card(self):
+                return self.next_card
+
+cards = (random.randint(1,13))
+card = (random.randint(1,13))
 
 points = 300
 
+print(cards)
+
 answer = print(input("Is the next card higher or lower? (higher / lower): "))
 
+print(card)
+         
+current_card = cards
+next_card = card
 
-class score:
-    card2 = cards()
-    print(card2.next_card())
+if answer == 'higher' and (current_card < next_card):
+   points += 100
+   print(f"You now have {points} points")
+                                        
+elif answer == 'lower' and (current_card > next_card):
+   points += 100
+   print(f"You now have {points} points")
+                                        
+elif answer == 'higher' and (current_card > next_card):
+   points -= 75
+   print(f"You now have {points} points")
 
+elif answer == 'lower' and (current_card < next_card):
+     points -= 75
+     print(f"You now have {points} points")
 
-if answer == 'higher' and card1.current_card < card2.next_card:
-        points = ({points} + 100)
-        print(points)
- 
-elif answer == 'lower' and card1.current_card > card2.next_card:
-        points = ({points} + 100)
-        print(points)
- 
-elif answer == 'higher' and card1.current_card > card2.next_card:
-        points = ({points} - 75)
-        print(points)
+else:
+     print('Invalid input. Please try again.')
+     answer
 
-elif answer == 'lower' and card1.current_card < card2.next_card:
-    points = ({points} - 75)
-        print(points)
-    else:
-         print('Invalid input. Please try again.')
-    answer
+if points == 0:
+     print('You lose. Thank you for playing')
 
+elif points != 0:
+     keep_playing = (input(f'You have {points}. Would you like to continue playing? (Y/N).'))
 
+if keep_playing == "n" or "N":
+        print("Thank you for playing")
 
-
-# if points == 0:
-#     print('You lose. Thank you for playing')
-
-# elif points != 0:
-#     keep_playing = (f'You have {points}. Would you like to continue playing? (Y/N). if you choose to play, type quit when you want the game to stop.')
-
-
-# while keep_playing == 'Y':
-#     print(cards)
-#     print()
-#     print(answer)
-#     print()
-#     print(cards)
-# else: 
-#     'quit'
-#     print('Thank you for playing')
-
-# if keep_playing == 'N':
-#     print('Thank you for playing.')
+        
+                                
